@@ -10,3 +10,10 @@ RewriteRule . /index.php [L]
 </IfModule>
 
 # END WordPress
+
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(ttf|otf|eot|woff)$">
+    Header set Access-Control-Allow-Origin "http://blog.noarika.com"
+  </FilesMatch>
+</IfModule>
