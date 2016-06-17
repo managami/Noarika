@@ -12,8 +12,9 @@ RewriteRule . /index.php [L]
 # END WordPress
 
 
-#<IfModule mod_headers.c>
-#  <FilesMatch "\.(ttf|otf|eot|woff)$">
-    Header set Access-Control-Allow-Origin "http://shop.noarika.com"
-#  </FilesMatch>
-#</IfModule>
+<IfModule mod_headers.c>
+  <FilesMatch "\.(ttf|otf|eot|woff)$">
+    Header set Access-Control-Allow-Origin "*"
+  </FilesMatch>
+</IfModule>
+
