@@ -1,0 +1,71 @@
+<h3 class="heading cartHeading">カートに入っている商品</h3>
+
+<{if $basket}>
+    <ul class="cartList">
+    <{$loop_basket}>
+        <li>
+            <dl class="cartItem">
+                <dt class="cartImg"><a href="<{$basket.detail_url}>"><img src="<{$basket.img_path}>" alt="<{$basket.name}>"></a></dt>
+                <dd>
+                    <p class="itemName"><a href="<{$basket.detail_url}>"><{$basket.name}></a></p>
+                    <p class="unitPrice">単価：<{$basket.unit_price}>円(税込)</p>
+                    <p class="basketPrice">価格：<{$basket.price}>円(税込)</p>
+                    <{$basket.option}>
+                    <div class="amount"><{$basket.qut}><a href="<{$basket.qut_chg}>" class="btn btnAmount">変更</a></div>
+                </dd>
+            </dl>
+            <a href="<{$basket.del}>" class="btn btnDelete">削除</a>
+        </li>
+    <{$loopend_basket}>
+    </ul>
+    <section class="cartTotal">
+        <div class="totalWrap">
+            <div class="totalTxt">合計金額（税込）：</div>
+            <div class="totalPrice"><{$basket_totalprice}>円</div>
+        </div>
+        
+        <{* 送料無料 *}>
+        <{if $free_carriage.is_enabled}>
+            <div class="infoCarriage">
+                <{if $free_carriage.price != 0}>
+                    <div class="yetCarriage carriageContent">
+                        <p class="carriageText">あと<em><{$free_carriage.price}></em>円で送料無料です</p>
+                        
+                        <{if $free_carriage.message}>
+                        <p class="carriageMesseage"><{$free_carriage.message}></p>
+                        <{/if}>
+                    </div>
+                <{else}>
+                    <div class="freeCarriage carriageContent">
+                        <p class="carriageText">今回のお買い物は<em>送料無料</em>になります</p>
+                        
+                        <{if $free_carriage.message}>
+                        <p class="carriageMesseage"><{$free_carriage.message}></p>
+                        <{/if}>
+                    </div>
+                <{/if}>
+            </div>
+        <{/if}>
+        
+    </section>
+    
+    
+    <section class="btnWrap">
+        <a href="<{$order}>" class="btn btnSubmit">レジヘ進む</a>
+    </section>
+<{else}>
+    
+    <div class="noItem">買い物かごに商品がありません</div>
+
+<{/if}>
+
+<div class="cartBox">
+    <ul class="cartMenu">
+        <{if $basket}>
+            <li><a href="<{$go_shopping}>" class="btn btnShopping">買い物を続ける</a></li>
+        <{else}>
+            <li><a href="<{$home_url}>" class="btn btnTop">トップページへ</a></li>
+        <{/if}>
+    </ul>
+</div>
+
