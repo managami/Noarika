@@ -1,0 +1,92 @@
+<tr><td><!--崩れ防止-->
+
+<div class="main-contents" id="basket">
+	<h2>買い物かご</h2>
+    
+	<div class="section basket-wrap">
+        <table class="basket">
+        <tr>
+            <th colspan="3">商品情報</th>
+            <th>数量</th>
+            <th>ポイント</th>
+            <th>価格</th>
+            <th></th>
+        </tr>
+        [IFBASKET]
+        [FORBASKET]
+        <tr>
+            <td class="basket-num">[BASKET_NUM]</td>
+            <td class="basket-img">[BASKET_IMG]</td>
+            <td class="basket-name">[BASKET_BRANDNAME][BASKET_ADDCODE1]
+            	[IFOPTION]
+                <div class="basket-option">[BASKET_OPTION]</div>
+            	[IFENDOPTION]
+            </td>
+            <td>
+                <div class="quantity-wrap">
+                    <div class="basket-quantity">
+                        [BASKET_QUANTITY]
+                    </div>
+
+                    [IFBASKET_NAMEOPTION]
+                    [IFELSEBASKET_NAMEOPTION]
+                    <div class="basket-amend"><a href=[BASKET_UPDATE] class="btn btn-small">修正</a></div>
+                    [IFENDBASKET_NAMEOPTION]
+
+                </div>
+            </td>
+            <td class="basket-point">[BASKET_RESERVE]P</td>
+            <td class="basket-price">[BASKET_PRICE]円</td>
+            <td class="basket-btn">
+                <a href=[BASKET_DEL] class="btn btn-small">削除</a></td>
+        </tr>
+        [BASKET_NAMEOPTION]
+        [FORENDBASKET]
+        <tr>
+        	<td colspan="8" class="basket-haisou">
+            	<div class="carriageWrap">
+                    <p class="carriageMsg1">[CARRIAGE_MSG1]</p>
+                    <p class="carriageMsg2">[CARRIAGE_MSG2]</p>
+                </div>
+            </td>
+        <tr>
+            <td colspan="8" class="basket-total">合計金額：<em>[BASKET_TOTALPRICE] (税込)</em></td>
+        </tr>
+        [IFELSEBASKET]
+        <tr>
+            <td colspan="8">
+            <p class="basket-empty">買い物かごに商品がありません</p>
+            </td>
+        </tr>
+        [IFENDBASKET]  
+        </table> 
+        
+        
+        
+        <div class="btn-wrap clear">
+            <div class="btn-wrap-back">
+                <a href=[GOSHOPPING] class="btn">買い物に戻る</a>
+                <a href=[CLEAR_BASKET] class="btn">かごの中身を空にする</a>
+            </div>
+            <div class="btn-wrap-order">
+            	<a href=[ORDER] class="btn">購入手続きへ進む</a>
+            </div>
+    	</div>
+        
+	</div>
+    
+
+    
+	<!--最近チェックした商品-->
+	[IF_RECENT]
+        <div class="section basket-recent item-list">
+        <h2>最近チェックした商品</h2>
+        [RECENT]
+        </div>
+	[ENDIF_RECENT]
+    
+</div>
+
+</td>
+</tr>
+</table>
