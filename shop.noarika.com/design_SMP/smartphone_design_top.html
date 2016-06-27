@@ -1,0 +1,99 @@
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.6";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<{if $mainvisual}>
+    <{$mainvisual}>
+<{/if}>
+
+<ul id="index_banner">
+<li><a href="/smartphone/news.html?date=20160523132435"><img src="/design/noarika/img/sp/bn_center01.jpg" alt="オープン記念キャンペーン！全品ポイント１５％還元キャンペーン！"></a></li>
+<li><a href="/smartphone/page1.html"><img src="/design/noarika/img/sp/bn_center03.jpg" alt="invite.L"></a></li>
+<li><a href="/shopbrand/ct3/"><img src="/design/noarika/img/sp/bn_center02.jpg" alt="液晶保護フィルム各種あります。スマホケースといっしょにいかがでしょうか？"></a></li>
+</ul>
+
+<{if $shop_comment}>
+    <div class="comment"><{$shop_comment}></div>
+<{/if}>
+
+
+<{* 新商品 *}>
+<{if $newitem_html}>
+    <section class="indexSection indexNew">
+        <h2 class="heading newHeading"><img src="/design/noarika/img/sp/tit_new.jpg" alt="新着商品"></h2>
+        <{$newitem_html}>
+    </section>
+<{/if}>
+
+
+<{* おすすめ商品 *}>
+<{if $recommend_html}>
+    <section class="indexSection indexRecommend">
+        <h2 class="heading recommendHeading"><img src="/design/noarika/img/sp/tit_pickup.jpg" alt="おすすめ商品"></h2>
+        <{$recommend_html}>
+    </section>
+<{/if}>
+
+
+<{* おしらせ *}>
+<section class="indexSection indexNews">
+    <h2 class="heading newsHeading"><img src="/design/noarika/img/sp/tit_oshirase.jpg" alt="お知らせ"></h2>
+    <{if $news.list}>
+        <ul class="newsList indexNewsList">
+        <{section name=i loop=$news.list max=$news.max}>
+            <li>
+            <span class="newsDate"><{$news.list[i].date}></span>
+            <span class="newsTitle"><a href="<{$news.list[i].url}>"><{$news.list[i].title}></a></span>
+            </li>
+        <{/section}>
+        </ul>
+    <{/if}>
+</section>
+
+
+<{* ランキング *}>
+<{if $ranking_product.list}>
+    <section class="indexSection indexRanking">
+        <h2 class="heading rankingHeading"><img src="/design/noarika/img/sp/tit_ranking.jpg" alt="ランキング"></h2>
+        <ul class="rankingList">
+            <{section name=i loop=$ranking_product.list max=9}>
+            <li>
+                <a href="<{$ranking_product.list[i].url}>">  
+                    <div class="itemImg">
+                        <span class="rankingNum"><{$ranking_product.list[i].number}></span>
+                        <img src="<{$ranking_product.list[i].image}>" <{$ranking_product.list[i].scaledown}>>
+                    </div>
+                    <p class="rankingName"><{$ranking_product.list[i].name}></p>
+                    <p class="rankingPrice"><{$ranking_product.list[i].price}>円</p>
+                </a>
+            </li>
+            <{/section}>
+        </ul>
+
+    </section>
+<{/if}>
+
+
+<{* 商品レビュー *}>
+<{if $review_product.is_enabled}>
+    <section class="indexSection indexReview">
+        <h2 class="heading newHeading"><img src="/design/noarika/img/sp/tit_review.jpg" alt="商品レビュー"></h2>
+        <{$review_product.list_html}>
+    </section>
+<{/if}>
+
+
+<{if $category_list2_html}>
+    <section class="indexSection indexCatlist">
+        <h2 class="heading catlistHeading"><img src="/design/noarika/img/sp/tit_category.jpg" alt="カテゴリー"></h2>
+        <{$category_list_html}>
+    </section>
+<{/if}>
+
+<hr>
+<div class="fb-page" data-href="https://www.facebook.com/noarika.net/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/noarika.net/"><a href="https://www.facebook.com/noarika.net/">Noarika</a></blockquote></div></div>

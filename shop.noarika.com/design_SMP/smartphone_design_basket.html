@@ -53,6 +53,12 @@
     <section class="btnWrap">
         <a href="<{$order}>" class="btn btnSubmit">レジヘ進む</a>
     </section>
+<{if $cart.is_use_amazon_pay}>
+    <section class="btnWrap">
+        <!-- Amazonログイン&ペイメント決済をご契約済みの場合のみ表示 -->
+        <{$cart.amazon_pay_button}>
+    </section>
+<{/if}>
 <{else}>
     
     <div class="noItem">買い物かごに商品がありません</div>
