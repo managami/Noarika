@@ -1,0 +1,71 @@
+<div class="main-contents" id="detail">
+    [TOPIC_PATH]
+    
+    <div class="section clear item-wrap">
+
+        <div class="item-img">
+            [RESIZE_IMAGE_500]
+        </div>
+
+        <div class="item-detail">
+            <h2>[BRANDNAME]</h2>
+
+            <div class="item-detail-text">[DETAIL]</div>
+
+            <div class="item-detail-info">
+            [INFO]
+            </div>
+
+            <div class="item-basket-btn">
+                [IF]<a href=[GETBASKET] class="btn btn-basket"><img src="/design/noarika/img/detail/r_basketBtn.png" alt="かごに入れる"></a>[END]
+                [ELSE]<p class="soldout btn">品切れ</p>[ENDIF]
+                <!--再入荷お知らせ-->[IF_RESTOCK]<a href=[RESTOCK] class="btn btn-restock">再入荷お知らせ</a>[ENDIF_RESTOCK]
+            </div>
+
+[IF_REVIEW]
+<div id="M_review">
+[REVIEW_WRITE]
+</div>
+<a href=[REVIEW_BUTTON] class="M_btnStyle">レビューを書く</a>
+<div id="M_reviewView">
+[REVIEW_VIEW]
+</div>
+</div>
+[ENDIF_REVIEW]
+
+            <ul class="item-sns clear">
+                <li>[TWITTER_BUTTON_1] </li>
+                <li>[FACEBOOK_BUTTON_1_N_1_1_30_440]</li>
+            </ul>
+
+        </div>
+    </div>
+
+
+    <!--追加商品説明文-->
+    <div class="section" id="r_detailExt">
+        <div class="detailExtTxt">[DETAIL_EXT]</div>
+    </div>
+
+
+    <!--追加商品画像-->
+    <div class="section" id="r_itemImage">
+<p><a href=[ITEMIMAGE_VIEW_1]><img src=[ITEMIMAGE_1_L]></a><br><span>[ITEMCAPTION_1]</span></p>
+<p><a href=[ITEMIMAGE_VIEW_2]><img src=[ITEMIMAGE_2_L]></a><br><span>[ITEMCAPTION_2]</span></p>
+<p><a href=[ITEMIMAGE_VIEW_3]><img src=[ITEMIMAGE_3_L]></a><br><span>[ITEMCAPTION_3]</span></p>
+    </div>
+
+   
+    <!--最近チェックした商品-->
+    [IF_RECENT]
+        <div class="section detail-recent item-list">
+        <h3><img src="/design/noarika/img/title/tit_recent.jpg" alt="最近チェックした商品"></h3>
+        [RECENT]
+        </div>
+    [ENDIF_RECENT]
+
+    <!--下段メニュータイプを左側メニュー除外選択時にフッターを表示-->
+    [SHOPINFO]
+
+</div>
+
