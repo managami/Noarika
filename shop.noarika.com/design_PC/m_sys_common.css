@@ -1072,3 +1072,48 @@ form[action="idinfo.html"] textarea{
     box-sizing:border-box;
 }
 
+
+/*****************************************************
+
+    独自ページ
+
+*****************************************************/
+.titleh2Text {
+padding: 60px 20px 20px;
+font-size: 44px;
+}
+.titleh3Text {
+padding: 10px 20px 10px;
+font-size: 24px;
+background-color:#87CEEB;
+color: #fff;
+}
+
+.mainText {
+padding: 20px 20px 50px;
+/* font-size: 12px; */
+text-align: left;
+}
+
+table.coupTable {
+border-collapse: collapse;
+text-align: left;
+line-height: 1.5;
+border: 1px solid #ccc;
+}
+
+table.coupTable th {
+padding: 10px;
+font-weight: bold;
+vertical-align: top;
+border-bottom: 1px solid #ccc;
+background: #efefef;
+}
+
+table.coupTable td {
+padding: 10px;
+vertical-align: top;
+border-bottom: 1px solid #ccc;
+}
+
+
