@@ -25,6 +25,9 @@
     </div>
     <div class="sideNav">
         <ul>
+            <li><span class="categorySwitch">カテゴリから探す</span>
+                <div class="sideCategory"><{$category_list_html}></div>
+            </li>
             <{if $member.is_logged_in}>
                 <li><a href="<{$member_edit_url}>">会員情報修正</a></li>
                 <li><a href="<{$member_orderhistory_url}>">注文履歴</a></li>
@@ -32,9 +35,6 @@
             <{else}>
                 <li><a href="<{$login_url}>">ログイン</a></li>
             <{/if}>
-            <li><span class="categorySwitch">カテゴリから探す</span>
-                <div class="sideCategory"><{$category_list2_html}></div>
-            </li>
             <li><a href="<{$url.company}>">このショップについて</a></li>
             <li><a href="<{$guide_url}>">ご利用ガイド</a></li>
             <li><a href="/blog/">ブログ</a></li>

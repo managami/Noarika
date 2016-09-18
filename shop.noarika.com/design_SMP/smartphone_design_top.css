@@ -1,0 +1,18 @@
+.topImage{
+margin-bottom:3%;
+}
+#index_banner{
+  width:100%;
+}
+
+#index_banner img{
+  width:100%;
+}
+
+#index_banner li{
+  padding-bottom:3%;
+}
+
+.more{
+text-decoration: underline;
+}
