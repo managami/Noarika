@@ -1,0 +1,129 @@
+<{$pankuzu}>
+
+<section>
+
+    <div class="itemSection itemImg">
+        <div class="imgWrap">
+            <{if $original_img_path}>
+                <a href="<{$original_img_path}>" target="_blank"><img src="<{$original_img_path}>" id="bigimg"></a>
+            <{else}>
+                <{$img}>
+            <{/if}>
+        </div>
+        <{$thumb_list}>
+    </div>
+
+    <{if $normalsale}>
+    <div class="itemSection itemInfo">
+        <h1 class="itemName"><{$name}></h1>
+
+        <{if $review.count}>
+            <{$review.star}>
+            <p class="reviewCount">（<a href="#itemReview"><{$review.count}>件</a>）</p>
+        <{/if}>
+        <{if $discount_period}>
+            <p class="saleTerm">セール期間：<{$discount_period}></p>
+        <{/if}>
+        <{if $consume_price}>
+            <p class="markedPrice"><{$consume_price_name}>：<span class="lineThrough"><{$consume_price}>円</span></p>
+        <{/if}>
+        <{if $original_price}>
+            <p class="regularPrice">通常価格：<span class="lineThrough"><{$original_price}>円</span></p>
+        <{/if}>
+            
+        <div class="salesPrice">
+            <p class="price" id="M_usualValue"><span id="taxPrice"><{$price}></span>円(税込)</p>
+            <{if $discount_rate}>
+                <p class="off">(<{$discount_rate}>%OFF)</p>
+            <{/if}>
+            <{if $point}>
+                <p class="shopPoint"><em><{$point}></em>pt</p>
+            <{/if}>
+        </div>
+
+    </div>
+
+
+    <div class="itemSection">
+        <div class="itemOption">
+            <{$option}>
+        </div>
+
+        <div class="itemAmount">
+            <dl class="amount">
+                <dt>数量</dt>
+                <dd><{$quantity}>
+                    <{if $stock}>
+                        残りあと<{$stock}>個
+                    <{/if}>
+                </dd>
+            </dl>
+            
+            <{if $option_stock_url}>
+                <p class="stock"><a href="<{$option_stock_url}>" class="btn stockBtn">在庫確認</a></p>
+            <{/if}>
+        </div>
+    </div>
+   
+   
+    <div class="itemSection itemBtn">
+        <{if $get_basket_url}>
+            <input type="submit" class="btn btnCart" value="カートに入れる" onclick="<{$get_basket_url}>">
+        <{elseif $restock_url}>
+            <input type="button" class="btn btnRestock" value="再入荷のお知らせを受け取る" onclick="<{$restock_url}>">
+        <{else}>
+            <p class="soldout">売り切れ</p>
+        <{/if}>
+        <p class="contactLink"><img src="/smartphone/images/template/5/icon-link.png"><a href="<{$contact_url}>">この商品について問い合わせる</a></p>
+    </div>
+
+    <{if $detail}>
+    <div class="itemSection itemContent">
+        <h2 class="heading">商品説明</h2>
+        <div class="content"><{$detail}></div>
+        <{$add_img_html}>
+    </div>
+    <{/if}>
+    
+    <{/if}>
+</section>
+
+<{if $brand_group}>
+<section class="itemSection">
+    <h3 class="heading">関連商品</h3>
+    <{$brand_group}>
+</section>
+<{/if}>
+
+
+<!--商品レビュー-->
+<{if $review.is_enabled}>
+<section class="itemSection itemReview" id="itemReview">
+    <h3 class="heading">この商品についてのレビュー</h3>
+    
+    <{if $review.count}>
+        <{$review.star}>
+    
+        <p class="reviewAverage"><{$review.average}></p>
+        <p class="reviewCount">（<{$review.count}>件）</p>
+        
+        <{$review.list_html}>
+        
+    <{else}>
+        <p class="reviewNullText">レビューはまだありません</p>
+    <{/if}>
+    
+    <div class="reviewBtn"><a href="<{$review.post_url}>" class="btn btnReview">レビューを書く</a></div>
+    
+</section>
+<{/if}>
+
+
+<section class="itemSection">
+    <h3 class="heading">この商品をシェア</h3>
+    <ul class="snsBtn">
+        <li><{$twitter_btn}></li>
+        <li><{$facebook_btn}></li>
+    </ul>   
+</section>
+
