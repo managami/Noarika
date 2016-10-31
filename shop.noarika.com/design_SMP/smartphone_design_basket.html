@@ -54,10 +54,10 @@
         <a href="<{$order}>" class="btn btnSubmit">レジヘ進む</a>
     </section>
 <{if $cart.is_use_amazon_pay}>
-    <section class="btnWrap">
-        <!-- Amazonログイン&ペイメント決済をご契約済みの場合のみ表示 -->
-        <{$cart.amazon_pay_button}>
-    </section>
+    <div class="amazonBtn">
+    <!-- Amazonロク&#12441;イン&ヘ&#12442;イメント決済をこ&#12441;契約済みの場合のみ表示 -->
+    <{$cart.amazon_pay_button}>
+    </div>
 <{/if}>
 <{else}>
     
@@ -74,4 +74,5 @@
         <{/if}>
     </ul>
 </div>
+
 
