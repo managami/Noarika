@@ -11,6 +11,29 @@
     <{$mainvisual}>
 <{/if}>
 
+<{if $category_list_html}>
+    <section class="indexSection indexCatlist">
+        <h2 class="heading catlistHeading"><img src="/design/noarika/img/sp/tit_category.jpg" alt="カテゴリー"></h2>
+        <{$category_list_html}>
+    </section>
+<{/if}>
+
+<{* おしらせ *}>
+<section class="indexSection indexNews">
+    <h2 class="heading newsHeading"><img src="/design/noarika/img/sp/tit_oshirase.jpg" alt="お知らせ"></h2>
+    <{if $news.list}>
+        <ul class="newsList indexNewsList">
+        <{section name=i loop=$news.list max=$news.max}>
+            <li>
+            <span class="newsDate"><{$news.list[i].date}></span>
+            <span class="newsTitle"><a href="<{$news.list[i].url}>"><{$news.list[i].title}></a></span>
+            </li>
+        <{/section}>
+        </ul>
+    <{/if}>
+</section>
+
+
 <ul id="index_banner">
 <li><a href="/shopbrand/ct46/"><img src="http://gigaplus.makeshop.jp/noarika/img/iphone7_thin_banner.png" alt="iPhone7ケース"></a></li>
 <!-- <li><a href="/smartphone/page1.html"><img src="/design/noarika/img/sp/bn_center03.jpg" alt="invite.L"></a></li> -->
@@ -42,21 +65,6 @@
     </section>
 <{/if}>
 
-
-<{* おしらせ *}>
-<section class="indexSection indexNews">
-    <h2 class="heading newsHeading"><img src="/design/noarika/img/sp/tit_oshirase.jpg" alt="お知らせ"></h2>
-    <{if $news.list}>
-        <ul class="newsList indexNewsList">
-        <{section name=i loop=$news.list max=$news.max}>
-            <li>
-            <span class="newsDate"><{$news.list[i].date}></span>
-            <span class="newsTitle"><a href="<{$news.list[i].url}>"><{$news.list[i].title}></a></span>
-            </li>
-        <{/section}>
-        </ul>
-    <{/if}>
-</section>
 
 
 <{* ランキング *}>
